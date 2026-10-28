@@ -14,7 +14,7 @@ import {
   AuditVerificationResult
 } from '../types';
 
-const API_BASE = `${import.meta.env.VITE_API_BASE_URL}/api`;
+const API_BASE = 'http://localhost:8000/api';
 
 async function fetchJson<T>(url: string, options?: RequestInit): Promise<T> {
   const res = await fetch(url, options);
