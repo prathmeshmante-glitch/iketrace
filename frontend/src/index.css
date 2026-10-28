@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-canvas: #F6F3EB;
+  --bg-surface: #FFFFFF;
+  --bg-subtle: #EFECE4;
+  --bg-elevated: #FAF8F5;
+  --text-main: #171717;
+  --text-muted: #525252;
+  --text-subtle: #737373;
+  --border-dark: #171717;
+  --accent-cobalt: #3859FF;
+  --accent-lime: #C8FF4D;
+  --accent-orange: #FF6B35;
+  --accent-danger: #FF3B30;
+  --accent-purple: #8A38FF;
+  --accent-amber: #FFC72C;
+  --shadow-brutal: 4px 4px 0px #171717;
+  --shadow-brutal-sm: 2px 2px 0px #171717;
+  --shadow-brutal-lg: 6px 6px 0px #171717;
+  --shadow-brutal-hover: 6px 6px 0px #171717;
+  --shadow-brutal-pressed: 1px 1px 0px #171717;
+
+  --font-heading: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-canvas);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+code, pre, .font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Neo-Brutalist Core Components */
+.card-brutal {
+  background-color: var(--bg-surface);
+  border: 2px solid var(--border-dark);
+  box-shadow: var(--shadow-brutal);
+  padding: 1.25rem;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.card-brutal:hover {
+  box-shadow: var(--shadow-brutal-hover);
+}
+
+.card-interactive:hover {
+  transform: translate(-2px, -2px);
+  cursor: pointer;
+}
+
+/* Buttons */
+.btn-brutal {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 0.625rem 1.25rem;
+  border: 2px solid var(--border-dark);
+  box-shadow: var(--shadow-brutal);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: all 0.1s ease;
+}
+
+.btn-brutal:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-brutal-hover);
+}
+
+.btn-brutal:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-brutal-pressed);
+}
+
+.btn-brutal:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.btn-primary {
+  background-color: var(--accent-cobalt);
+  color: #FFFFFF;
+}
+
+.btn-secondary {
+  background-color: var(--accent-lime);
+  color: var(--text-main);
+}
+
+.btn-warning {
+  background-color: var(--accent-orange);
+  color: #FFFFFF;
+}
+
+.btn-danger {
+  background-color: var(--accent-danger);
+  color: #FFFFFF;
+}
+
+.btn-neutral {
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+}
+
+.btn-sm {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.75rem;
+  box-shadow: var(--shadow-brutal-sm);
+}
+
+/* Status Badges */
+.badge-brutal {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.625rem;
+  border: 2px solid var(--border-dark);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.badge-pass {
+  background-color: var(--accent-lime);
+  color: #000000;
+  box-shadow: var(--shadow-brutal-sm);
+}
+
+.badge-fail {
+  background-color: var(--accent-danger);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-brutal-sm);
+}
+
+.badge-unknown {
+  background-color: var(--accent-amber);
+  color: #000000;
+  box-shadow: var(--shadow-brutal-sm);
+}
+
+.badge-na {
+  background-color: #E5E7EB;
+  color: #374151;
+}
+
+.badge-cobalt {
+  background-color: var(--accent-cobalt);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-brutal-sm);
+}
+
+.badge-orange {
+  background-color: var(--accent-orange);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-brutal-sm);
+}
+
+/* Neo-Brutal Tables */
+.table-brutal-container {
+  border: 2px solid var(--border-dark);
+  box-shadow: var(--shadow-brutal);
+  overflow-x: auto;
+  background-color: var(--bg-surface);
+}
+
+.table-brutal {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table-brutal th {
+  background-color: var(--text-main);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.75rem 1rem;
+  border-right: 1px solid #333333;
+}
+
+.table-brutal td {
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid var(--border-dark);
+  border-right: 1px solid #E5E5E5;
+  font-size: 0.875rem;
+}
+
+.table-brutal tr:last-child td {
+  border-bottom: none;
+}
+
+.table-brutal tr:hover td {
+  background-color: #FAF7F0;
+}
+
+/* Inputs & Form Elements */
+.input-brutal {
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  border: 2px solid var(--border-dark);
+  background-color: #FFFFFF;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--text-main);
+  outline: none;
+  box-shadow: var(--shadow-brutal-sm);
+  transition: box-shadow 0.1s ease;
+}
+
+.input-brutal:focus {
+  box-shadow: 4px 4px 0px var(--accent-cobalt);
+  border-color: var(--border-dark);
+}
+
+/* Alert Boxes */
+.alert-brutal {
+  border: 2px solid var(--border-dark);
+  box-shadow: var(--shadow-brutal);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.alert-warning {
+  background-color: #FFF9DB;
+  border-left: 8px solid var(--accent-orange);
+}
+
+.alert-info {
+  background-color: #EBF1FF;
+  border-left: 8px solid var(--accent-cobalt);
+}
+
+.alert-danger {
+  background-color: #FFEBEA;
+  border-left: 8px solid var(--accent-danger);
+}
+
+.alert-success {
+  background-color: #F4FEE4;
+  border-left: 8px solid var(--accent-lime);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-canvas);
+  border: 1px solid var(--border-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--text-main);
+}
